@@ -1,12 +1,7 @@
-Pass by Reference Calculator (C Program)
+📘 Pass-by-Reference Calculator (C Program)
 
-This project demonstrates how to perform arithmetic operations in C using pass-by-reference (pointers).
-The program allows the user to input two numbers and choose an operation such as addition, subtraction, multiplication, or division.
-Features
-
-Uses functions with pointer parameters (pass by reference)
-
-Supports basic arithmetic operations:
+This project is a simple calculator implemented in C, demonstrating the concept of pass-by-reference using pointers.
+The program performs four basic arithmetic operations:
 
 Addition
 
@@ -14,33 +9,77 @@ Subtraction
 
 Multiplication
 
-Division (with zero-division handling)
+Division
 
-Displays result with 2-decimal precision
-main.c
+📂 Features
 
-Contains:
+Takes two numbers as input from the user
 
-Function definitions for addvalue, subvalue, mulvalue, and divvalue
+Allows the user to choose an operation (1–4)
 
-Menu-driven program to perform selected arithmetic operation
+Uses separate functions for each operation
 
-Demonstrates how pointers are used to return results
+Demonstrates pointer usage (double *x)
 
-How It Works
+Handles division by zero safely
 
-The user enters two numbers (a and b).
+Displays the final result with two decimal places
 
-The user selects an operation from the menu:
+🛠️ How It Works
+
+Each arithmetic function receives the addresses of the two numbers and the result variable.
+Example:
+
+addvalue(&a, &b, &result);
+
+
+Inside each function, the actual memory values are accessed using the dereference operator *.
+
+▶️ Compilation & Execution
+Compile
+gcc calculator.c -o calculator
+
+Run
+./calculator
+
+📥 User Input Format
+
+The program expects:
+
+Two numbers
+
+An operation choice
 
 1 → Addition
+
 2 → Subtraction
+
 3 → Multiplication
+
 4 → Division
 
+Example:
 
-The program calls the respective function and passes variables using pointers.
+Enter two numbers: 10 5
+Enter the choice: 1
 
-The function updates the result variable using dereferencing.
+📤 Sample Output
+Pass by Reference Calculator
+Enter two numbers: 10 5
+enter the choice:1
+Result = 15.00
 
-The final result is printed on the screen.
+🧾 Code Overview
+
+The project contains:
+
+Four arithmetic functions (addvalue, subvalue, mulvalue, divvalue)
+
+A switch statement to select the operation
+
+Pointer-based parameter passing
+
+🛡️ Error Handling
+
+✔ Division by zero is checked
+✔ Invalid choice results in a friendly error message
