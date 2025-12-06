@@ -1,83 +1,85 @@
-# Employee Overtime Salary Calculator (C Program)
+# Power of a Number Using C (Without Built-in Function)
 
 ## 📌 Description
-This C program calculates the **overtime pay** for **4 employees** based on the number of hours they worked.  
-If an employee works **more than 40 hours**, they are paid **Rs.120 per extra hour** as overtime.  
-If they work **40 hours or less**, no overtime is paid.
+This C program calculates the **value of a number raised to the power of another number** using a **while loop**, without using any built-in power functions like `pow()`.
 
-The program uses:
-- `while` loop
-- `if-else` condition
-- User input using `scanf()`
+The first number (base) is of type `float`, and the second number (exponent) is of type `int`.
 
 ---
 
-## ✅ Overtime Rules
-- **Normal Working Hours:** 40 hours  
-- **Overtime Pay Rate:** Rs. 120 per hour  
-- **Overtime Condition:** Hours > 40
+## ✅ Program Features
+- Accepts two numbers from the user:
+  - A **floating-point base**
+  - An **integer exponent**
+- Calculates power using **repeated multiplication**
+- Displays the result clearly
+- Uses:
+  - `while` loop
+  - `scanf()` and `printf()`
 
 ---
 
-## 🧾 Program Logic
-1. The program runs a loop for **4 employees**.
-2. For each employee:
-   - Takes number of hours worked as input.
-   - Checks if hours are more than 40.
-   - Calculates overtime pay if applicable.
-3. Displays:
-   - Total hours worked
-   - Overtime pay
+## 🧠 Program Logic
+1. Read base value `x` and exponent `y`.
+2. Initialize:
+   - `power = 1`
+   - `i = 1`
+3. Multiply `power` with `x`, `y` number of times.
+4. Print the result as:
+x to the power y is power
+
+cpp
+Copy code
 
 ---
 
 ## 💻 Source Code
 ```c
-// find 4 employees net salary and if employee works more than 40 hours it is overtime then find total salary
+// Two numbers are entered through the keyboard.
+// Write a program to find the value of one number raised to the power of another.
 #include <stdio.h>
 
 int main() {
-    int hours;
-    float otpay;
-    int i = 1;
+ float x, power;
+ int y, i;
 
-    while (i <= 4) {
-        printf("Enter no. of hours worked: ");
-        scanf("%d", &hours);
+ printf("Enter two numbers: ");
+ scanf("%f %d", &x, &y);
 
-        if (hours > 40)
-            otpay = (hours - 40) * 120;
-        else
-            otpay = 0;
+ power = i = 1;
 
-        printf("Hours = %d  Overtime Pay = Rs. %.2f\n", hours, otpay);
+ while (i <= y) {
+     power = power * x;
+     i++;
+ }
 
-        i++;
-    }
-
-    return 0;
+ printf("%f to the power %d is %f\n", x, y, power);
+ return 0;
 }
-▶️ How to Run the Program
-Step 1: Compile the program
+▶️ How to Compile and Run
+Step 1: Compile
 bash
 Copy code
-gcc overtime.c -o overtime
-Step 2: Run the program
+gcc power.c -o power
+Step 2: Run
 bash
 Copy code
-./overtime
+./power
 🧪 Sample Input & Output
 Input:
-nginx
+yaml
 Copy code
-Enter no. of hours worked: 45
-Enter no. of hours worked: 40
-Enter no. of hours worked: 50
-Enter no. of hours worked: 38
+Enter two numbers: 2 5
 Output:
-ini
+vbnet
 Copy code
-Hours = 45  Overtime Pay = Rs. 600.00
-Hours = 40  Overtime Pay = Rs. 0.00
-Hours = 50  Overtime Pay = Rs. 1200.00
-Hours = 38  Overtime Pay = Rs. 0.00
+2.000000 to the power 5 is 32.000000
+📚 Concepts Used
+Data Types (float, int)
+
+While Loop
+
+Repeated Multiplication
+
+User Input / Output
+
